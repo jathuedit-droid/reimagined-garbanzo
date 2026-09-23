@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>My AI Assistant</title><link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<header><div class="logo">✦ My AI</div><nav><button onclick="show('home')">Home</button><button onclick="show('login')">Login</button><button onclick="show('register')">Create Account</button></nav></header>
+<main>
+<section id="home" class="page active hero"><div class="hero-card"><div class="orb">🤖</div><h1>Your Private AI Assistant</h1><p>Sign in and chat with your personal AI assistant from one secure dashboard.</p><div><button class="primary" onclick="show('login')">Login</button><button class="secondary" onclick="show('register')">Get Started</button></div></div></section>
+
+<section id="login" class="page"><div class="form-card"><h2>Welcome back</h2><p>Login to continue.</p><input id="lemail" placeholder="Email" type="email"><input id="lpass" placeholder="Password" type="password"><button class="primary full" onclick="login()">Login</button><div id="lmsg" class="msg"></div></div></section>
+
+<section id="register" class="page"><div class="form-card"><h2>Create your account</h2><p>Your details are stored securely.</p><input id="rname" placeholder="Full name"><input id="remail" placeholder="Email" type="email"><input id="rpass" placeholder="Password (6+ characters)" type="password"><button class="primary full" onclick="register()">Create Account</button><div id="rmsg" class="msg"></div></div></section>
+
+<section id="chat" class="page"><div class="chat-wrap"><div class="chat-head"><div><h2>My AI Assistant</h2><small id="welcome"></small></div><div><button onclick="show('admin')" id="adminBtn" class="secondary hidden">Admin</button><button onclick="logout()" class="secondary">Logout</button></div></div><div id="messages" class="messages"><div class="bubble ai">Hello! I'm your AI assistant. What would you like to ask?</div></div><div class="chat-input"><input id="chatInput" placeholder="Type your message..." onkeydown="if(event.key==='Enter')sendChat()"><button class="primary" onclick="sendChat()">Send</button></div></div></section>
+
+<section id="admin" class="page"><div class="admin-card"><div class="chat-head"><h2>Admin Dashboard</h2><button class="secondary" onclick="show('chat')">Back</button></div><p>Only the admin account can see this page.</p><div id="users"></div></div></section>
+</main>
+<footer>Private AI Assistant • Built for your website</footer>
+<script src="/app.js"></script>
+</body></html>
